@@ -18,22 +18,22 @@ resources:
   Resources:
     #Cognito - User pool
     CognitoUserPool:
-      Type: AWS::Cognito::CognitoUserPool
+      Type: AWS::Cognito::UserPool
       Properties:
-        UserPoolName: user-test-pool
+        UserPoolName: user_test_pool
     #Cognito - Client
     CognitoUserPoolClient:
       Type: AWS::Cognito::UserPoolClient
       Properties:
-        ClientName: client-test-pool
+        ClientName: client_test_pool
         UserPoolId:
           Ref: CognitoUserPool
     #Cognito-Identity
     CognitoIdentityPool:
       Type: AWS::Cognito::IdentityPool
       Properties:
-        IdentityPoolName: identity-test-pool
-        AllowUnauthenticatedIdenties: false
+        IdentityPoolName: identity_test_pool
+        AllowUnauthenticatedIdentities: false
         CognitoIdentityProviders:
           - ClientId:
               Ref: CognitoUserPoolClient
