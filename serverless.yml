@@ -24,7 +24,7 @@ resources:
     #Cognito - Client
     CognitoUserPoolClient:
       Type: AWS::Cognito::UserPoolClient
-      Propeties:
+      Properties:
         ClientName: client-test-pool
         UserPoolId:
           Ref: CognitoUserPool
